@@ -1,0 +1,40 @@
+{
+  "Plugins": [
+    {
+      "Type": "python",
+      "Name": "usdAecoPlanValidators",
+      "Root": ".",
+      "Info": {
+        "Validators": {
+          "keywords": [
+            "UsdAecoPlanValidators"
+          ],
+          "AccessAfterEnclosureChecker": {
+            "doc": "Check access after enclosure."
+          },
+          "WorkspaceOccupiedChecker": {
+            "doc": "Check workspace occupied."
+          },
+          "EnclosureBeforeInspectionChecker": {
+            "doc": "Check enclosure before inspection."
+          },
+          "PredecessorCycleChecker": {
+            "doc": "Check predecessor cycle."
+          },
+          "DanglingScopeChecker": {
+            "doc": "Check dangling scope."
+          },
+          "UnscheduledElementChecker": {
+            "doc": "Check unscheduled element."
+          },
+          "TemporaryWithoutRemovalChecker": {
+            "doc": "Check temporary without removal."
+          },
+          "DatesOutsideProgrammeChecker": {
+            "doc": "Check dates outside programme."
+          }
+        }
+      }
+    }
+  ]
+}

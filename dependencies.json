@@ -1,0 +1,37 @@
+{
+  "repos": {
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.9.2"
+    },
+    "axis": {
+      "repo": "usdaeco-axis",
+      "library": "usdAecoAxis",
+      "ref": "v0.1.2"
+    },
+    "toolchain": {
+      "repo": "usdaeco-toolchain",
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.8"
+    },
+    "datacentre": {
+      "repo": "usdaeco-datacentre",
+      "library": "usdaeco-datacentre",
+      "ref": "v0.4.5"
+    }
+  },
+  "fixtures": {
+    "pod-programmes": {
+      "repo": "usdaeco-datacentre",
+      "ref": "v0.4.2",
+      "paths": [
+        "examples/datacentre/inputs/A.xer",
+        "examples/datacentre/inputs/A.xml",
+        "examples/datacentre/inputs/B.xer",
+        "examples/datacentre/inputs/B.xml"
+      ],
+      "reason": "Historical programme inputs retained unchanged; the composed building uses the direct datacentre pin."
+    }
+  }
+}

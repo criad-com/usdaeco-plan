@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+"""Run the planning CLI directly from a source checkout."""
+from usdaeco_plan.cli import main
+raise SystemExit(main())

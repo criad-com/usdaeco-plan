@@ -1,0 +1,17 @@
+#usda 1.0
+(subLayers = [@../schema.usda@])
+over "AecoProgramme" (customData = {
+    string userDocBrief = "Programme identity, scope and calendar-to-stage clock."
+}) {}
+over "AecoActivity" (customData = {
+    string userDocBrief = "Work breakdown and ordered dependency constraints over scope."
+}) {}
+over "AecoMilestone" (customData = {
+    string userDocBrief = "An identified work event."
+}) {}
+over "AecoScheduleAPI" (customData = {
+    string userDocBrief = "Stored planned, baseline and actual dates."
+}) {}
+over "AecoWorkspaceAPI" (customData = {
+    string userDocBrief = "Required access, enclosure and workspace occupancy."
+}) {}

@@ -1,0 +1,351 @@
+{
+  "actual_findings_sha256": "562b8f3c95638532d97ef75128fdedb81e72b2e3a97c13093495b0445205dec6",
+  "budgetSeconds": 480,
+  "datacentre": {
+    "ref": "v0.4.5",
+    "variant": "pod"
+  },
+  "facility": "demo-datacentre-01",
+  "findings_sha256": "562b8f3c95638532d97ef75128fdedb81e72b2e3a97c13093495b0445205dec6",
+  "pins": {
+    "axis": {
+      "library": "usdAecoAxis",
+      "ref": "v0.1.2",
+      "repo": "usdaeco-axis"
+    },
+    "core": {
+      "library": "usdAeco",
+      "ref": "v0.9.2",
+      "repo": "usdaeco-core"
+    },
+    "datacentre": {
+      "library": "usdaeco-datacentre",
+      "ref": "v0.4.5",
+      "repo": "usdaeco-datacentre"
+    },
+    "toolchain": {
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.8",
+      "repo": "usdaeco-toolchain"
+    }
+  },
+  "programmes": {
+    "A": "result/layers/out/A/play.usda",
+    "B": "result/example.usdc"
+  },
+  "renders": [
+    {
+      "bytes": 215056,
+      "height": 500,
+      "path": "renders/A.0.png",
+      "sha256": "29155ec8f4433d83deead5631484928c7aa377a1cf5459ad06862fae952a77cb",
+      "width": 800
+    },
+    {
+      "bytes": 212239,
+      "height": 500,
+      "path": "renders/A.14.png",
+      "sha256": "1a0dbc244cead4aef19e764a18784b09b498de264abe588cfcfe8f4520158262",
+      "width": 800
+    },
+    {
+      "bytes": 213137,
+      "height": 500,
+      "path": "renders/A.21.png",
+      "sha256": "60161a2396d515e3c97d57817c4d14f0a95bd988abdf1c11e9dcbaa3382e754f",
+      "width": 800
+    },
+    {
+      "bytes": 229852,
+      "height": 500,
+      "path": "renders/A.28.png",
+      "sha256": "9de573f6cd996aec9672266101db27c06a6e2edca43ee2f5712204455f5b757e",
+      "width": 800
+    },
+    {
+      "bytes": 205070,
+      "height": 500,
+      "path": "renders/A.35.png",
+      "sha256": "e271902a0777701571e46b40fa80e7d8510e2967778b8e493a46531dbc2cfd8c",
+      "width": 800
+    },
+    {
+      "bytes": 204355,
+      "height": 500,
+      "path": "renders/A.42.png",
+      "sha256": "43ac06ce2a86a18bd7c41daf1da2c32939860b40d11ef78044b713e9d3b85360",
+      "width": 800
+    },
+    {
+      "bytes": 204761,
+      "height": 500,
+      "path": "renders/A.49.png",
+      "sha256": "b0c1bb15b1a3c3079f88e992175018103f9fa9cda687de0da77771e4cdcbe951",
+      "width": 800
+    },
+    {
+      "bytes": 204901,
+      "height": 500,
+      "path": "renders/A.56.png",
+      "sha256": "4b2fea6665891f3db6794d7eb21469bbdf07b7f3aac5617ea24c263d004507e9",
+      "width": 800
+    },
+    {
+      "bytes": 206148,
+      "height": 500,
+      "path": "renders/A.63.png",
+      "sha256": "89a52ba04882fe7ac4cae1232832586bb9e45f42e593919a4852d23f2d1fa69f",
+      "width": 800
+    },
+    {
+      "bytes": 214939,
+      "height": 500,
+      "path": "renders/A.7.png",
+      "sha256": "e4dfa4b0dbde7bed822a96318d1bf1539c4c09a04426b15bc00502342760aef7",
+      "width": 800
+    },
+    {
+      "bytes": 206497,
+      "height": 500,
+      "path": "renders/A.70.png",
+      "sha256": "e5c60e767b4dd6d1291f0d4ea4f7eb507d6363470bf3400198478608ef758918",
+      "width": 800
+    },
+    {
+      "bytes": 206132,
+      "height": 500,
+      "path": "renders/A.77.png",
+      "sha256": "944bcb9d76865ef479c5efb8f27cf55c26cfef1094f21092c046762d31ada12e",
+      "width": 800
+    },
+    {
+      "bytes": 381277,
+      "height": 400,
+      "path": "renders/A.gif",
+      "sha256": "d0b32e1979d55fa814bb2abde4edcc5056a3ef9fcaef19d916863e674bb291e9",
+      "width": 640
+    },
+    {
+      "bytes": 155544,
+      "height": 498,
+      "path": "renders/A.sheet.png",
+      "sha256": "39ea992d9ebe6f6abd926ed2d230c66a7fd82ddd83d9f402545658e466a5095e",
+      "width": 800
+    },
+    {
+      "bytes": 214483,
+      "height": 500,
+      "path": "renders/B.0.png",
+      "sha256": "7e1af7f24c2dfd2fa0b0ef76f04e5549dac5cb96856dd35926554bf6274d9750",
+      "width": 800
+    },
+    {
+      "bytes": 235286,
+      "height": 500,
+      "path": "renders/B.14.png",
+      "sha256": "dd43d8ced048ef4e9dac2bf54ad6a7336254c5a59a5fc360cf1129502a20f426",
+      "width": 800
+    },
+    {
+      "bytes": 235321,
+      "height": 500,
+      "path": "renders/B.21.png",
+      "sha256": "ad1008fc33d959b340553d853e28789af5ecc39ba9146f50971a848e29f7908a",
+      "width": 800
+    },
+    {
+      "bytes": 234870,
+      "height": 500,
+      "path": "renders/B.28.png",
+      "sha256": "fb81e2119539eef5d5914b68d470822d5cefe3c64f7dde8c5860a3ffe5e6debb",
+      "width": 800
+    },
+    {
+      "bytes": 206402,
+      "height": 500,
+      "path": "renders/B.35.png",
+      "sha256": "9084983186b096f51b08a71aad72377c5466c821219023c46be3d8389bcb735d",
+      "width": 800
+    },
+    {
+      "bytes": 206715,
+      "height": 500,
+      "path": "renders/B.42.png",
+      "sha256": "78855c3acb08209cb0de0c68ad2757b77978e109620dea71a2e46cf6249f35c0",
+      "width": 800
+    },
+    {
+      "bytes": 205255,
+      "height": 500,
+      "path": "renders/B.49.png",
+      "sha256": "044584482f7a4904990716c3d44c58907185086dcf8d8ac22fec1deecae2441e",
+      "width": 800
+    },
+    {
+      "bytes": 205987,
+      "height": 500,
+      "path": "renders/B.56.png",
+      "sha256": "09e35685c2447002c92c92ce51af3cc217c03602fe693c6d5f8079b54636873a",
+      "width": 800
+    },
+    {
+      "bytes": 206163,
+      "height": 500,
+      "path": "renders/B.63.png",
+      "sha256": "7843782fe539108897fb19177798543f6783cd97136437a0517d6450cd90950e",
+      "width": 800
+    },
+    {
+      "bytes": 214061,
+      "height": 500,
+      "path": "renders/B.7.png",
+      "sha256": "80b8df36b376dcd072776665cbbb7a53fd0ef03faa1363bc336a95fa5864ed7e",
+      "width": 800
+    },
+    {
+      "bytes": 206076,
+      "height": 500,
+      "path": "renders/B.70.png",
+      "sha256": "0d8ed2411739a6a9a937df0203d5d7c98edfb9577d98a219429b2c993fcd356b",
+      "width": 800
+    },
+    {
+      "bytes": 205417,
+      "height": 500,
+      "path": "renders/B.77.png",
+      "sha256": "e5888b2604392706c515cc1fdec0ed54891ccd1c63741ff93973f473570a6986",
+      "width": 800
+    },
+    {
+      "bytes": 281051,
+      "height": 300,
+      "path": "renders/B.gif",
+      "sha256": "9085f373b4cdd12a8858c9fa6ee7662cb4b78a93a6f9703687347190a51356fb",
+      "width": 480
+    },
+    {
+      "bytes": 158327,
+      "height": 498,
+      "path": "renders/B.sheet.png",
+      "sha256": "8c84bfe2bc8daebea9da951b1253b291aae13fb8be3283b0e9ee8dc3b0af82c3",
+      "width": 800
+    }
+  ],
+  "result": {
+    "bytes": 2025800,
+    "files": [
+      {
+        "bytes": 910,
+        "path": "result/README.md",
+        "sha256": "0d1d9c34612b77fc8429f4e1a760b7069c88e4e91218cbe2506eabd3a40e2e36"
+      },
+      {
+        "bytes": 1682981,
+        "normalized_sha256": "27b9b6fc53b2e5021c06708510bc964d48fe21a9c97d39e8d12dd719fc376248",
+        "path": "result/example.usdc",
+        "sha256": "12099506dae71ba8ec4246d3d0baac648f1e248ca726851d95370d858f9e2bb2"
+      },
+      {
+        "bytes": 399,
+        "path": "result/layers/inputs/cameras.usda",
+        "sha256": "2aca819dabe0e05f86710e30ae598e445c1aede8ec374e73004840829b09c66c"
+      },
+      {
+        "bytes": 10026,
+        "path": "result/layers/out/A/4d.usda",
+        "sha256": "6352a87f11cd69952fe224036108d34fc161e44786ed3a1ca70f012593f62513"
+      },
+      {
+        "bytes": 23556,
+        "path": "result/layers/out/A/mspdi.usda",
+        "sha256": "e49ee6163ae254ebf2cf0186e8f9d22cf8d0ee7da475a2729578ce8192ef810d"
+      },
+      {
+        "bytes": 792,
+        "path": "result/layers/out/A/play.usda",
+        "sha256": "baebbb1f27c31df3fbd5cdb03623a98e3e3f0196ac927917932068313e97260c"
+      },
+      {
+        "bytes": 1914,
+        "path": "result/layers/out/A/predecessors.usda",
+        "sha256": "03d880f282c532b50c9d1df962d889c8a14c5479b6703fe814a52433ee022ddf"
+      },
+      {
+        "bytes": 7899,
+        "path": "result/layers/out/A/presentation.usda",
+        "sha256": "000dae6c99994feb8db8a8d0da0801aab835b19e0c82532b9c9c576109f620e2"
+      },
+      {
+        "bytes": 23549,
+        "path": "result/layers/out/A/programme.usda",
+        "sha256": "844327d2447d006d7ce85e9ef39e273f2289ac60efa1670b096f19556799ae0e"
+      },
+      {
+        "bytes": 10026,
+        "path": "result/layers/out/B/4d.usda",
+        "sha256": "d0cc6895a45abd29ee86b2be1ad2a84a4bf68428912a4eca84c0898602a70861"
+      },
+      {
+        "bytes": 23597,
+        "path": "result/layers/out/B/mspdi.usda",
+        "sha256": "6f825b6debd74e1008a549121e98b61668f75e0084dab3b421742d220996db7b"
+      },
+      {
+        "bytes": 792,
+        "path": "result/layers/out/B/play.usda",
+        "sha256": "baebbb1f27c31df3fbd5cdb03623a98e3e3f0196ac927917932068313e97260c"
+      },
+      {
+        "bytes": 2022,
+        "path": "result/layers/out/B/predecessors.usda",
+        "sha256": "f2352990a13702fa8b3d8e58ac0be2acffa99bf0a50f76aeb7bb0226d810e14f"
+      },
+      {
+        "bytes": 7225,
+        "path": "result/layers/out/B/presentation.usda",
+        "sha256": "25d8f350cf9a40b1cf5e11c3f07d606ea52036c04c225dfd25b892bf9db3435d"
+      },
+      {
+        "bytes": 23588,
+        "path": "result/layers/out/B/programme.usda",
+        "sha256": "bbbfdcc49d94234100c14b874b28eed7a0852136007a15341f0ef5f5abab3de1"
+      },
+      {
+        "bytes": 206524,
+        "path": "result/vanilla.png",
+        "sha256": "a617e0641ad3350a77955afa5cc4cd3cb6ca9aa379dd2cc54afbd0913d244729"
+      }
+    ],
+    "normalization": "sdf-usda-v1",
+    "prim_count": 12358,
+    "vanilla": {
+      "bytes": 206524,
+      "height": 500,
+      "path": "result/vanilla.png",
+      "sha256": "a617e0641ad3350a77955afa5cc4cd3cb6ca9aa379dd2cc54afbd0913d244729",
+      "width": 800
+    }
+  },
+  "source": {
+    "layers": [
+      {
+        "bytes": 344521,
+        "path": "dc.geometry.usdc",
+        "sha256": "1d354322d109961778e84ee12329039acc72e97458088d30dab9d2bb900812c9"
+      },
+      {
+        "bytes": 1483117,
+        "path": "dc.semantics.usdc",
+        "sha256": "fdc17683abc6c985df8654181404cb117deacd47cfc186391ad9c2a844b2648c"
+      },
+      {
+        "bytes": 517,
+        "path": "dc.usda",
+        "sha256": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+      }
+    ],
+    "manifest_sha256": "6ac73e7cfe8220f9c09fa95f2442f653b3ea25a6d73420979307ec4dae0c8d77",
+    "mode": "pinned",
+    "sha256": "628b1383ecb57956fd3c39967c68914afa97c3a3d24c7359c05c44b9cdb7abf9"
+  }
+}

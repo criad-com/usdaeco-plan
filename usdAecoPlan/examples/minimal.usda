@@ -1,0 +1,65 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+    fallbackPrimTypes = {
+        token[] AecoProgramme = ["Scope"]
+        token[] AecoActivity = ["Scope"]
+        token[] AecoMilestone = ["Scope"]
+    }
+)
+
+def Xform "World"
+{
+    def Xform "Panel" (prepend apiSchemas = ["AecoElementAPI", "AecoClassificationAPI:ifc"])
+    {
+        string aeco:id = "90309501-9cae-5fd4-919b-72f0bffea054"
+        token aeco:phase = "proposed"
+        string aeco:class:ifc:code = "IfcCovering.CEILING"
+        def Cube "Body" (prepend apiSchemas = ["AecoDerivedGeometryAPI"])
+        {
+            string aeco:derived:source = "90309501-9cae-5fd4-919b-72f0bffea054"
+            token aeco:derived:role = "body"
+            token aeco:derived:approx = "exact"
+            string aeco:derived:stamp = "minimal-v1"
+            double aeco:derived:tolerance = 0.001
+            double size = 1
+            color3f[] primvars:displayColor = [(0.23, 0.39, 0.6)]
+            double3 xformOp:scale = (3, 2, 0.1)
+            uniform token[] xformOpOrder = ["xformOp:scale"]
+        }
+    }
+}
+
+def AecoProgramme "Programme" (prepend apiSchemas = ["CollectionAPI:members"])
+{
+    string aeco:id = "41b0919f-1709-5604-a02a-a6934d15611a"
+    string aeco:plan:epoch = "2027-03-01"
+    double aeco:plan:timeCodesPerDay = 1
+    string aeco:plan:plannedStart = "2027-03-01"
+    string aeco:plan:plannedFinish = "2027-03-14"
+    uniform token collection:members:expansionRule = "explicitOnly"
+    rel collection:members:includes = </World/Panel>
+    def AecoActivity "Install" (prepend apiSchemas = ["AecoScheduleAPI", "CollectionAPI:members"])
+    {
+        string aeco:id = "72bb0ddd-58db-5833-9485-7828d49c3058"
+        uniform token aeco:plan:taskType = "installation"
+        string aeco:schedule:plannedStart = "2027-03-08"
+        string aeco:schedule:plannedFinish = "2027-03-10"
+        uniform token collection:members:expansionRule = "explicitOnly"
+        rel collection:members:includes = </World/Panel>
+    }
+    def AecoMilestone "Handover" (prepend apiSchemas = ["AecoScheduleAPI", "CollectionAPI:members"])
+    {
+        string aeco:id = "b78607a2-4688-5336-8e83-0bb6346fd15f"
+        uniform token aeco:plan:taskType = "attendance"
+        string aeco:schedule:plannedStart = "2027-03-14"
+        string aeco:schedule:plannedFinish = "2027-03-14"
+        string[] aeco:plan:predecessorIds = ["72bb0ddd-58db-5833-9485-7828d49c3058"]
+        double[] aeco:plan:lagDays = [4]
+        token[] aeco:plan:linkType = ["FS"]
+        uniform token collection:members:expansionRule = "explicitOnly"
+        rel collection:members:includes = </World/Panel>
+    }
+}

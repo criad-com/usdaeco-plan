@@ -1,0 +1,15 @@
+{
+  "keywords": [
+    "UsdAecoPlanValidators"
+  ],
+  "severity_overrides": {
+    "AccessAfterEnclosure": "error",
+    "WorkspaceOccupied": "error",
+    "EnclosureBeforeInspection": "warn",
+    "PredecessorCycle": "error",
+    "DanglingScope": "error",
+    "UnscheduledElement": "warn",
+    "TemporaryWithoutRemoval": "warn",
+    "DatesOutsideProgramme": "error"
+  }
+}

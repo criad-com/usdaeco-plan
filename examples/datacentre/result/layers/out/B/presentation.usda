@@ -1,0 +1,232 @@
+#usda 1.0
+(
+    customLayerData = {
+        bool "aeco:plan:derived" = 1
+    }
+)
+
+over "Renders"
+{
+    over "B" (
+        active = true
+    )
+    {
+    }
+}
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Office_Corridor_L01"
+                {
+                    over "pod_wc_temp"
+                    {
+                        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (17, -7.5, 4, 1) ) (
+                            aecoDerived = true
+                        )
+                        token[] xformOpOrder = ["xformOp:transform"]
+
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.93, 0.43, 0.16)]
+                        }
+                    }
+
+                    over "Corridor_ceiling_void"
+                    {
+                        over "pipe_chw_void_f"
+                        {
+                            over "Geom"
+                            {
+                                custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                            }
+                        }
+
+                        over "pipe_chw_void_r"
+                        {
+                            over "Geom"
+                            {
+                                custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                            }
+                        }
+
+                        over "tray_void_ocorr_1"
+                        {
+                            over "Geom"
+                            {
+                                custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                            }
+                        }
+                    }
+
+                    over "clg_ocorr_1"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.23, 0.39, 0.6)]
+                        }
+                    }
+                }
+
+                over "Open_Office"
+                {
+                    over "Office_ceiling_void"
+                    {
+                        over "cnd_void_office_1"
+                        {
+                            over "Geom"
+                            {
+                                custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                            }
+                        }
+
+                        over "cnd_void_office_2"
+                        {
+                            over "Geom"
+                            {
+                                custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                            }
+                        }
+
+                        over "fcu_office_1"
+                        {
+                            over "Geom"
+                            {
+                                custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                            }
+                        }
+                    }
+
+                    over "clg_office"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.23, 0.39, 0.6)]
+                        }
+                    }
+
+                    over "grl_office_1"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "grl_office_2"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "grl_office_3"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "grl_office_4"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "lum_office_1"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "lum_office_2"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "lum_office_3"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "lum_office_4"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "lum_office_5"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "lum_office_6"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+                }
+
+                over "WC"
+                {
+                    over "pipe_drain_pod"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "pod_wc"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "san_pod_1"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+
+                    over "san_pod_2"
+                    {
+                        over "Geom"
+                        {
+                            custom color3f[] primvars:displayColor = [(0.13, 0.62, 0.57)]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

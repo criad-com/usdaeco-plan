@@ -1,0 +1,293 @@
+#usda 1.0
+(
+    customLayerData = {
+        bool "aeco:plan:derived" = 1
+        string "aeco:plan:epoch" = "2027-03-01"
+        double "aeco:plan:timeCodesPerDay" = 1
+    }
+    endTimeCode = 69
+    startTimeCode = 0
+    timeCodesPerSecond = 24
+)
+
+over "demo_datacentre_01"
+{
+    over "demo_datacentre_01_Site"
+    {
+        over "demo_datacentre_01"
+        {
+            over "L01_Office"
+            {
+                over "Office_Corridor_L01"
+                {
+                    over "Corridor_ceiling_void"
+                    {
+                        over "pipe_chw_void_f"
+                        {
+                            token visibility = "inherited" (
+                                aecoDerived = true
+                            )
+                            token visibility.timeSamples = {
+                                0: "invisible",
+                                28: "inherited",
+                            }
+                        }
+
+                        over "pipe_chw_void_r"
+                        {
+                            token visibility = "inherited" (
+                                aecoDerived = true
+                            )
+                            token visibility.timeSamples = {
+                                0: "invisible",
+                                28: "inherited",
+                            }
+                        }
+
+                        over "tray_void_ocorr_1"
+                        {
+                            token visibility = "inherited" (
+                                aecoDerived = true
+                            )
+                            token visibility.timeSamples = {
+                                0: "invisible",
+                                28: "inherited",
+                            }
+                        }
+                    }
+
+                    over "clg_ocorr_1"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            35: "inherited",
+                        }
+                    }
+
+                    over "pod_wc_temp"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            14: "inherited",
+                            59: "invisible",
+                        }
+                    }
+                }
+
+                over "Open_Office"
+                {
+                    over "Office_ceiling_void"
+                    {
+                        over "cnd_void_office_1"
+                        {
+                            token visibility = "inherited" (
+                                aecoDerived = true
+                            )
+                            token visibility.timeSamples = {
+                                0: "invisible",
+                                28: "inherited",
+                            }
+                        }
+
+                        over "cnd_void_office_2"
+                        {
+                            token visibility = "inherited" (
+                                aecoDerived = true
+                            )
+                            token visibility.timeSamples = {
+                                0: "invisible",
+                                28: "inherited",
+                            }
+                        }
+
+                        over "fcu_office_1"
+                        {
+                            token visibility = "inherited" (
+                                aecoDerived = true
+                            )
+                            token visibility.timeSamples = {
+                                0: "invisible",
+                                28: "inherited",
+                            }
+                        }
+                    }
+
+                    over "clg_office"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            35: "inherited",
+                        }
+                    }
+
+                    over "grl_office_1"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "grl_office_2"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "grl_office_3"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "grl_office_4"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "lum_office_1"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "lum_office_2"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "lum_office_3"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "lum_office_4"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "lum_office_5"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+
+                    over "lum_office_6"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            49: "inherited",
+                        }
+                    }
+                }
+
+                over "WC"
+                {
+                    over "pipe_drain_pod"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            63: "inherited",
+                        }
+                    }
+
+                    over "pod_wc"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            60: "inherited",
+                        }
+                    }
+
+                    over "san_pod_1"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            63: "inherited",
+                        }
+                    }
+
+                    over "san_pod_2"
+                    {
+                        token visibility = "inherited" (
+                            aecoDerived = true
+                        )
+                        token visibility.timeSamples = {
+                            0: "invisible",
+                            63: "inherited",
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

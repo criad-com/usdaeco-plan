@@ -1,0 +1,137 @@
+{
+  "artifactAudit": {
+    "byteIdenticalFiles": [
+      "examples/datacentre/expected/findings.json",
+      "examples/datacentre/result/example.usdc",
+      "examples/datacentre/result/README.md",
+      "examples/datacentre/renders/A.gantt.svg",
+      "examples/datacentre/renders/B.gantt.svg",
+      "examples/datacentre/result/layers/inputs/cameras.usda",
+      "examples/datacentre/result/layers/out/A/4d.usda",
+      "examples/datacentre/result/layers/out/A/mspdi.usda",
+      "examples/datacentre/result/layers/out/A/play.usda",
+      "examples/datacentre/result/layers/out/A/predecessors.usda",
+      "examples/datacentre/result/layers/out/A/presentation.usda",
+      "examples/datacentre/result/layers/out/A/programme.usda",
+      "examples/datacentre/result/layers/out/B/4d.usda",
+      "examples/datacentre/result/layers/out/B/mspdi.usda",
+      "examples/datacentre/result/layers/out/B/play.usda",
+      "examples/datacentre/result/layers/out/B/predecessors.usda",
+      "examples/datacentre/result/layers/out/B/presentation.usda",
+      "examples/datacentre/result/layers/out/B/programme.usda"
+    ],
+    "changedImages": [
+      "examples/datacentre/renders/A.0.png",
+      "examples/datacentre/renders/A.14.png",
+      "examples/datacentre/renders/A.21.png",
+      "examples/datacentre/renders/A.28.png",
+      "examples/datacentre/renders/A.35.png",
+      "examples/datacentre/renders/A.42.png",
+      "examples/datacentre/renders/A.49.png",
+      "examples/datacentre/renders/A.56.png",
+      "examples/datacentre/renders/A.63.png",
+      "examples/datacentre/renders/A.7.png",
+      "examples/datacentre/renders/A.70.png",
+      "examples/datacentre/renders/A.77.png",
+      "examples/datacentre/renders/A.gif",
+      "examples/datacentre/renders/A.sheet.png",
+      "examples/datacentre/renders/B.0.png",
+      "examples/datacentre/renders/B.14.png",
+      "examples/datacentre/renders/B.21.png",
+      "examples/datacentre/renders/B.28.png",
+      "examples/datacentre/renders/B.35.png",
+      "examples/datacentre/renders/B.42.png",
+      "examples/datacentre/renders/B.49.png",
+      "examples/datacentre/renders/B.56.png",
+      "examples/datacentre/renders/B.63.png",
+      "examples/datacentre/renders/B.7.png",
+      "examples/datacentre/renders/B.70.png",
+      "examples/datacentre/renders/B.77.png",
+      "examples/datacentre/renders/B.gif",
+      "examples/datacentre/renders/B.sheet.png",
+      "examples/datacentre/result/vanilla.png",
+      "usdAecoPlan/userDoc/usdAecoPlanExample.png"
+    ]
+  },
+  "budgetSeconds": 480,
+  "date": "2026-09-12",
+  "pins": {
+    "axis": {
+      "library": "usdAecoAxis",
+      "ref": "v0.1.2",
+      "repo": "usdaeco-axis"
+    },
+    "core": {
+      "library": "usdAeco",
+      "ref": "v0.9.2",
+      "repo": "usdaeco-core"
+    },
+    "datacentre": {
+      "library": "usdaeco-datacentre",
+      "ref": "v0.4.5",
+      "repo": "usdaeco-datacentre"
+    },
+    "toolchain": {
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.6",
+      "repo": "usdaeco-toolchain"
+    }
+  },
+  "profile": {
+    "imageDecodeCalls": 139,
+    "imageDecodeCumulativeSeconds": 140.549,
+    "redundantInventorySeconds": 29.199,
+    "rendererSubprocessSeconds": 80.375,
+    "seconds": 227.347,
+    "status": "Complete diagnostic before removing redundant final image inventory",
+    "threads": 1
+  },
+  "renderSamples": 8,
+  "runs": [
+    {
+      "crateBytesEqual": true,
+      "findingsSha256": "562b8f3c95638532d97ef75128fdedb81e72b2e3a97c13093495b0445205dec6",
+      "ganttSha256": {
+        "A": "bb1af6e7765cccb9c75a15e0d6181c3713c0a8e05747958e778d625a2a8b01fc",
+        "B": "f1b146a238dd63d8f80def735d70015b747f676f1b034c43161277ee292b383b"
+      },
+      "normalizedCrateEqual": true,
+      "profiled": false,
+      "renderCount": 28,
+      "seconds": 155.499,
+      "threads": 1,
+      "withinBudget": true
+    },
+    {
+      "crateBytesEqual": true,
+      "findingsSha256": "562b8f3c95638532d97ef75128fdedb81e72b2e3a97c13093495b0445205dec6",
+      "ganttSha256": {
+        "A": "bb1af6e7765cccb9c75a15e0d6181c3713c0a8e05747958e778d625a2a8b01fc",
+        "B": "f1b146a238dd63d8f80def735d70015b747f676f1b034c43161277ee292b383b"
+      },
+      "normalizedCrateEqual": true,
+      "profiled": false,
+      "renderCount": 28,
+      "seconds": 99.2,
+      "threads": 2,
+      "withinBudget": true
+    }
+  ],
+  "verification": {
+    "gateRunnerSeconds": 97.762,
+    "nixAttempts": 1,
+    "nixStatus": "Unresolved nested axis/datacentre v0.4.2 input; offline cached HTTP 404",
+    "notRun": 2,
+    "pytestPassed": 24,
+    "relocatedCompositionErrors": 0,
+    "relocatedCoreValidatorsLoaded": 8,
+    "relocatedPrimCount": 12358,
+    "repositoryChecks": 51,
+    "repositoryFailures": 0,
+    "s29AssetPaths": 10,
+    "structureChecksPerLayout": 29,
+    "structureFailures": 0,
+    "visibilityAssertions": 552
+  },
+  "version": "0.1.2"
+}

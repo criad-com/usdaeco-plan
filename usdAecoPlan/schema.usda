@@ -1,0 +1,96 @@
+#usda 1.0
+(
+    subLayers = [@usd/schema.usda@, @usdGeom/schema.usda@, @usdAeco/schema.usda@]
+)
+
+over "GLOBAL" (
+    customData = {
+        string libraryName = "usdAecoPlan"
+        string libraryPath = "./"
+        bool skipCodeGeneration = true
+        bool useLiteralIdentifier = true
+    }
+) {}
+
+class AecoProgramme "AecoProgramme" (
+    inherits = </AecoGroupBase>
+    doc = "An identified programme record; its children form a work breakdown, never spatial containment. Members delimit the programme's scope."
+    customData = {
+        string className = "Programme"
+        token[] fallbackTypes = ["Scope"]
+    }
+) {
+    string aeco:plan:epoch = "" (doc = "ISO-8601 date corresponding to timeCode zero in a derived view.")
+    double aeco:plan:timeCodesPerDay = 1 (doc = "Positive finite stage time codes per elapsed calendar day.")
+    string aeco:plan:dataDate = "" (doc = "ISO-8601 status date from the source; empty when absent.")
+    string aeco:plan:source = "" (doc = "Source format and version; provenance, not identity.")
+    string aeco:plan:plannedStart = "" (doc = "ISO-8601 programme boundary; stored source date, or declared envelope when absent.")
+    string aeco:plan:plannedFinish = "" (doc = "ISO-8601 programme boundary; stored source date, or declared envelope when absent.")
+}
+
+class AecoActivity "AecoActivity" (
+    inherits = </AecoGroupBase>
+    doc = "An identified work record. Nesting expresses WBS; the core members collection binds scope without moving built things."
+    customData = {
+        string className = "Activity"
+        token[] fallbackTypes = ["Scope"]
+    }
+) {
+    uniform token aeco:plan:taskType = "construction" (
+        allowedTokens = ["construction", "demolition", "installation", "removal", "move", "logistic", "maintenance", "operation", "attendance", "notDefined"]
+        doc = "IfcTaskTypeEnum work operation, not a product kind."
+    )
+    string[] aeco:plan:predecessorIds = [] (doc = "One aeco:id per source link row, including duplicates, in source order.")
+    double[] aeco:plan:lagDays = [] (doc = "Parallel signed lags in successor working days; imported from calendar hours, never recomputed by CPM.")
+    token[] aeco:plan:linkType = [] (
+        allowedTokens = ["FS", "SS", "FF", "SF"]
+        doc = "Parallel predecessor/successor endpoint constraints in source order."
+    )
+    rel aeco:plan:predecessors (
+        aecoDerived = true
+        doc = "Regenerable unique path-sorted target view of predecessorIds, authored in a separate derived layer."
+    )
+    string aeco:plan:wbsCode = "" (doc = "Source work breakdown code; descriptive, never an alternative identity.")
+}
+
+class AecoMilestone "AecoMilestone" (
+    inherits = </AecoActivity>
+    doc = "An identified zero-duration work event in the work breakdown."
+    customData = {
+        string className = "Milestone"
+        token[] fallbackTypes = ["Scope"]
+    }
+) {}
+
+class "AecoScheduleAPI" (
+    inherits = </APISchemaBase>
+    doc = "Stored ISO-8601 work dates and progress on an activity, including milestones. No critical-path calculation."
+    customData = {
+        string className = "ScheduleAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["AecoActivity"]
+    }
+) {
+    string aeco:schedule:plannedStart = "" (doc = "Planned start date.")
+    string aeco:schedule:plannedFinish = "" (doc = "Planned finish date.")
+    string aeco:schedule:baselineStart = "" (doc = "Baseline start date when supplied.")
+    string aeco:schedule:baselineFinish = "" (doc = "Baseline finish date when supplied.")
+    string aeco:schedule:actualStart = "" (doc = "Actual start date when supplied.")
+    string aeco:schedule:actualFinish = "" (doc = "Actual finish date when supplied.")
+    double aeco:schedule:percentComplete = 0 (doc = "Source completion percentage, from zero to one hundred.")
+}
+
+class "AecoWorkspaceAPI" (
+    inherits = </APISchemaBase>
+    doc = "Declared access and occupancy requirements for a work activity. These relationships are drivers, not geometric reachability predictions."
+    customData = {
+        string className = "WorkspaceAPI"
+        token apiSchemaType = "singleApply"
+        token[] apiSchemaCanOnlyApplyTo = ["AecoActivity"]
+    }
+) {
+    rel aeco:workspace:requiresAccess (doc = "Regions or elements that must remain accessible throughout this activity.")
+    rel aeco:workspace:encloses (doc = "Regions closed by this activity; access is conservatively restricted from its start.")
+    rel aeco:workspace:occupies (doc = "Spaces blocked throughout this activity's inclusive date window.")
+    rel aeco:workspace:accessVia (doc = "Optional spaces from which the activity is carried out.")
+}

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usdaeco-plan"
+version = "0.1.3"
+requires-python = ">=3.11"
+dependencies = ["usdaeco-toolchain>=0.3.6,<0.4"]
+
+[project.scripts]
+aeco-plan = "usdaeco_plan.cli:main"
+xer2usdaeco = "usdaeco_plan.xer2usdaeco:main"
+mspdi2usdaeco = "usdaeco_plan.mspdi2usdaeco:main"
+
+[tool.setuptools]
+packages = ["usdaeco_plan", "usdAecoPlanValidators"]
+package-dir = {usdaeco_plan = "tools/usdaeco_plan", usdAecoPlanValidators = "usdAecoPlanValidators"}
+
+[tool.setuptools.package-data]
+usdAecoPlanValidators = ["plugInfo.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["testenv"]
+python_files = ["test*.py"]

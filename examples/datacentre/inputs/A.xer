@@ -1,0 +1,39 @@
+ERMHDR	8.4	2027-03-01	Project	USD
+%T	ERMHDR
+%F	version	export_date
+%R	8.4	2027-03-01
+%T	PROJECT
+%F	proj_id	proj_short_name	project_flag	clndr_id	plan_start_date
+%R	1	A	Y	1	2027-03-01
+%T	CALENDAR
+%F	clndr_id	clndr_name	day_hr_cnt	week_hr_cnt	clndr_type
+%R	1	Elapsed days	24	168	CA_Project
+%T	PROJWBS
+%F	wbs_id	proj_id	parent_wbs_id	wbs_short_name	wbs_name	seq_num
+%R	1	1		Fitout	Fitout	1
+%R	2	1	1	Logistics	Logistics	2
+%R	3	1	1	Services	Services	3
+%T	TASK
+%F	task_id	proj_id	task_code	task_name	wbs_id	task_type	clndr_id	target_start_date	target_end_date	phys_complete_pct	status_code	dc_task_type
+%R	1	1	act.pod.deliver	Deliver temporary pod	2	TT_Task	1	2027-03-15 00:00	2027-03-15 00:00	0	TK_NotStart	installation
+%R	2	1	act.pod.park	Pod parked awaiting relocation	2	TT_Task	1	2027-03-15 00:00	2027-04-29 00:00	0	TK_NotStart	logistic
+%R	3	1	act.first	MEP first fix in both voids	3	TT_Task	1	2027-03-29 00:00	2027-04-18 00:00	0	TK_NotStart	installation
+%R	4	1	act.inspect	Inspect first fix	3	TT_Task	1	2027-04-19 00:00	2027-04-20 00:00	0	TK_NotStart	attendance
+%R	5	1	act.ceiling.office	Close office ceiling	3	TT_Task	1	2027-04-05 00:00	2027-04-11 00:00	0	TK_NotStart	construction
+%R	6	1	act.ceiling.corridor	Close corridor ceiling	3	TT_Task	1	2027-04-05 00:00	2027-04-11 00:00	0	TK_NotStart	construction
+%R	7	1	act.second	Luminaires and grilles from below	3	TT_Task	1	2027-04-19 00:00	2027-04-30 00:00	0	TK_NotStart	installation
+%R	8	1	act.pod.remove	Remove temporary pod position	2	TT_Task	1	2027-04-29 00:00	2027-04-29 00:00	0	TK_NotStart	removal
+%R	9	1	act.pod.install	Install final bathroom pod	2	TT_Task	1	2027-04-30 00:00	2027-04-30 00:00	0	TK_NotStart	installation
+%R	10	1	act.third	Drainage and sanitary third fix	3	TT_Task	1	2027-05-03 00:00	2027-05-09 00:00	0	TK_NotStart	installation
+%T	TASKPRED
+%F	task_pred_id	proj_id	task_id	pred_task_id	pred_type	lag_hr_cnt
+%R	1	1	2	1	PR_SS	0
+%R	2	1	3	1	PR_FS	336
+%R	3	1	4	3	PR_FS	24
+%R	4	1	5	1	PR_FS	504
+%R	5	1	6	1	PR_FS	504
+%R	6	1	7	5	PR_FS	192
+%R	7	1	8	2	PR_FF	0
+%R	8	1	9	8	PR_FS	24
+%R	9	1	10	9	PR_FS	72
+%E

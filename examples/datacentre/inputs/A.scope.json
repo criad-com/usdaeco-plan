@@ -1,0 +1,49 @@
+{
+  "act.ceiling.corridor": [
+    "clg.ocorr.1"
+  ],
+  "act.ceiling.office": [
+    "clg.office"
+  ],
+  "act.first": [
+    "tray.void.ocorr.1",
+    "pipe.chw.void.f",
+    "pipe.chw.void.r",
+    "fcu.office.1",
+    "cnd.void.office.1",
+    "cnd.void.office.2"
+  ],
+  "act.inspect": [
+    "sp.void.office",
+    "sp.void.ocorr.1"
+  ],
+  "act.pod.deliver": [
+    "pod.wc.temp"
+  ],
+  "act.pod.install": [
+    "pod.wc"
+  ],
+  "act.pod.park": [
+    "pod.wc.temp"
+  ],
+  "act.pod.remove": [
+    "pod.wc.temp"
+  ],
+  "act.second": [
+    "lum.office.1",
+    "lum.office.2",
+    "lum.office.3",
+    "lum.office.4",
+    "lum.office.5",
+    "lum.office.6",
+    "grl.office.1",
+    "grl.office.2",
+    "grl.office.3",
+    "grl.office.4"
+  ],
+  "act.third": [
+    "pipe.drain.pod",
+    "san.pod.1",
+    "san.pod.2"
+  ]
+}

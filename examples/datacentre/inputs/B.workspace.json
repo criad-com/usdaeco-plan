@@ -1,0 +1,86 @@
+{
+  "activities": {
+    "act.ceiling.corridor": {
+      "encloses": [
+        "sp.void.ocorr.1"
+      ],
+      "occupies": [],
+      "requiresAccess": [
+        "sp.ocorr.1"
+      ]
+    },
+    "act.ceiling.office": {
+      "encloses": [
+        "sp.void.office"
+      ],
+      "occupies": [],
+      "requiresAccess": [
+        "sp.office"
+      ]
+    },
+    "act.first": {
+      "encloses": [],
+      "occupies": [],
+      "requiresAccess": [
+        "sp.void.office",
+        "sp.void.ocorr.1"
+      ]
+    },
+    "act.inspect": {
+      "encloses": [],
+      "occupies": [],
+      "requiresAccess": [
+        "sp.void.office",
+        "sp.void.ocorr.1"
+      ]
+    },
+    "act.pod.deliver": {
+      "encloses": [],
+      "occupies": [],
+      "requiresAccess": []
+    },
+    "act.pod.install": {
+      "encloses": [],
+      "occupies": [],
+      "requiresAccess": [
+        "sp.wc"
+      ]
+    },
+    "act.pod.park": {
+      "encloses": [],
+      "occupies": [
+        "sp.office"
+      ],
+      "requiresAccess": []
+    },
+    "act.pod.remove": {
+      "encloses": [],
+      "occupies": [],
+      "requiresAccess": []
+    },
+    "act.second": {
+      "encloses": [],
+      "occupies": [],
+      "requiresAccess": [
+        "sp.office"
+      ]
+    },
+    "act.third": {
+      "encloses": [],
+      "occupies": [],
+      "requiresAccess": [
+        "sp.wc"
+      ]
+    }
+  },
+  "placements": {
+    "pod.wc.temp": {
+      "pos": [
+        17.0,
+        -7.5,
+        4.0
+      ],
+      "space": "sp.office"
+    }
+  }
+}
