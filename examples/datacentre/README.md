@@ -1,6 +1,6 @@
 # Demo data-centre planning example
 
-The `pod` variant at v0.4.5 supplies the building. Committed inputs contain
+The `pod` variant at v0.4.8 supplies the building. Committed inputs contain
 programme A (as issued) and B (resequenced) in P6 XER and MSPDI XML, plus scope
 and workspace bindings. The source files were emitted by the pinned generator
 in a disposable copy; this example never writes to a dependency checkout.
@@ -49,7 +49,7 @@ The two programmes reuse the composed building stage; A's opinions are removed
 before importing B. Each weekly PNG is rendered once, then the shared toolchain
 derives its programme's contact sheet and GIF from those files. See the
 [acceptance evidence](../../docs/acceptance.md) for timings, profiling and the
-precise image changes in this release.
+publication comparisons.
 
 Pinned runs create an ignored `inputs/source` alias to the supplied data release.
 Archived layers reference the self-contained crate and each other, so the

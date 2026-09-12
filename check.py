@@ -92,7 +92,7 @@ def main():
                  and len(fresh_renders) == 28, '24 PNG frames, 2 contact sheets, 2 GIFs in committed and fresh inventories')
     report.add(link_check(ROOT / 'docs'))
     report.not_run('private real-project XER', 'Private client data is excluded and was never read.')
-    report.not_run('Nix dependency evaluation', 'One offline attempt recorded in docs/acceptance.md; unresolved inputs are not a pass.')
+    report.not_run('Nix dependency evaluation', 'One offline attempt recorded in docs/acceptance.md; an incomplete build is not a pass.')
     return report.finish()
 
 

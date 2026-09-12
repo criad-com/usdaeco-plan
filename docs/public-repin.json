@@ -1,0 +1,118 @@
+{
+  "version": "0.1.4",
+  "baseline_version": "0.1.3",
+  "pins": {
+    "core": {
+      "repo": "usdaeco-core",
+      "library": "usdAeco",
+      "ref": "v0.9.5",
+      "revision": "683adc3280254bc71b396a9c64a359cc708788f4"
+    },
+    "axis": {
+      "repo": "usdaeco-axis",
+      "library": "usdAecoAxis",
+      "ref": "v0.1.5",
+      "revision": "ecff1d98bcc45c22fcceefd453374671900793ae"
+    },
+    "toolchain": {
+      "repo": "usdaeco-toolchain",
+      "library": "usdaeco-toolchain",
+      "ref": "v0.3.10",
+      "revision": "59d3da5ff5114089b54efaaae38efdd7fe1b8e73"
+    },
+    "datacentre": {
+      "repo": "usdaeco-datacentre",
+      "library": "usdaeco-datacentre",
+      "ref": "v0.4.8",
+      "revision": "9e22b14c4909e50806805e735f93b1b425ac48cb"
+    }
+  },
+  "publication": {
+    "seconds": 107.671,
+    "exit_code": 0
+  },
+  "artifact_comparison": {
+    "byte_identical_files": 46,
+    "crate": 1,
+    "editable_layers": 13,
+    "gantt_svgs": 2,
+    "retained_images": 30,
+    "generated_schema_byte_identical": true,
+    "source_layers_byte_identical": 3,
+    "manifest_changed_fields": [
+      "datacentre.ref",
+      "pins.axis.ref",
+      "pins.axis.revision",
+      "pins.core.ref",
+      "pins.core.revision",
+      "pins.datacentre.ref",
+      "pins.datacentre.revision",
+      "pins.toolchain.ref",
+      "pins.toolchain.revision",
+      "result.files[0].sha256"
+    ],
+    "result_notice_change": "Source release tag v0.4.5 to v0.4.8 only"
+  },
+  "fresh_previews": {
+    "render_inventory": 28,
+    "vanilla_renders": 1,
+    "image_files_differing_from_baseline": 29,
+    "png_mean_absolute_rgb_error_range_0_to_255": [
+      0.227891,
+      0.492595
+    ],
+    "committed_images": "Retained baseline bytes; fresh sampling varies without scene changes."
+  },
+  "result": {
+    "prim_count": 12358,
+    "bytes": 2025800,
+    "files": 16
+  },
+  "nix": {
+    "attempts": 1,
+    "exit_code": 1,
+    "outcome": "stopped after 180 seconds",
+    "seconds": 180.024,
+    "local_overrides": 8
+  },
+  "public_tag_probe": {
+    "date": "2026-09-12",
+    "toolchain": {
+      "ref": "v0.3.10",
+      "anonymous_git": "PASS",
+      "public_revision": "6328e1b5e63f89ea87984ad240b5c3ca37974795"
+    },
+    "core": {
+      "ref": "v0.9.5",
+      "anonymous_git": "PASS",
+      "public_revision": "784e4a77b9b6e8340cf35f221332bc14dd9e5f20"
+    },
+    "axis": {
+      "ref": "v0.1.5",
+      "anonymous_git": "FAILED: authentication requested",
+      "tag_page_http_status": 404
+    },
+    "datacentre": {
+      "ref": "v0.4.8",
+      "anonymous_git": "FAILED: authentication requested",
+      "tag_page_http_status": 404
+    }
+  },
+  "verification": {
+    "checks": 51,
+    "failed": 0,
+    "not_run": 2,
+    "structure_checks": 29,
+    "structure_failed": 0,
+    "pytest_passed": 24,
+    "pytest_seconds": 1.34,
+    "core_validators": 8,
+    "planning_validators": 8,
+    "fresh_example_seconds": 97.555,
+    "budget_seconds": 480,
+    "visibility_assertions": 552,
+    "tracked_files_scanned": 104,
+    "former_public_org_flake_refs": 0,
+    "commit_hash_family_refs": 0
+  }
+}

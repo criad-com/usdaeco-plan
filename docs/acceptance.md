@@ -1,5 +1,59 @@
 # Acceptance evidence
 
+## v0.1.4 public re-pin
+
+Target: usdAecoPlan v0.1.4 against core v0.9.5, axis v0.1.5,
+toolchain v0.3.10 and datacentre v0.4.8, variant `pod`. The four tagged
+checkouts match the revisions in `dependencies.json`. Supported ranges remain
+unchanged. [The publication receipt](public-repin.json) records the comparisons.
+
+| Acceptance | Status | Evidence |
+|---|---|---|
+| Direct pins | PASS | All 4 requested tags in flake URLs, dependency revisions and example provenance; no commit-hash family refs |
+| Patch version | PASS | Library, Python package, runtime and generated resource metadata all equal 0.1.4 |
+| Repository gate | PASS | 51 checks, 0 failed, 2 not run; 8 core and 8 planning validators loaded |
+| Structure lint | PASS | S01–S29: 29 checks, 0 failed under toolchain v0.3.10, including S05, S22 and S25 |
+| Python tests | PASS | 24 passed in 1.34 s from source, without package installation |
+| Publication | PASS | Documented build and `run.py --publish`; 107.671 s at two USD threads and 8 samples per pixel |
+| Fresh example gate | PASS | 97.555 s / 480 s; 28 non-blank weekly/summary renders plus a fresh stock vanilla render |
+| Planning results | PASS | A has 3 named findings, B has 0; both normalized XER/MSPDI pairs agree; each programme has 0 core errors and 2 source warnings |
+| Stock playback | PASS | 12,358 prims, 552 visibility assertions; self-contained result is 2,025,800 bytes across 16 files |
+| Artifact comparison | PASS | Crate, 13 editable layers, 2 Gantt SVGs and 30 retained images: 46 files byte-identical; all 3 pod source layers and generated schema also byte-identical |
+| Provenance-only result diff | PASS | Result README changes only the source tag; manifest changes 10 fields: tags, revisions and the notice hash |
+| Public-reference sweep | PASS | 104 tracked files; zero former public-org flake references and zero commit-hash family refs |
+| Anonymous public tags | PARTIAL | Toolchain v0.3.10 and core v0.9.5 resolve; axis v0.1.5 and datacentre v0.4.8 request authentication, with HTTP 404 on their public tag pages |
+| Nix build | NOT PROVEN | One offline attempt, 8 local overrides; 5 Darwin derivations evaluated; stopped after 180.024 s while building a source dependency, exit 1 |
+| Private real-project XER | NOT RUN | Private client data is excluded and was never read |
+
+All four integration revisions were resolved from their annotated release tags.
+Source codeless plugins supply the exact release metadata: the existing build
+outputs had older metadata, while their generated schemas were byte-identical.
+No dependency checkout was built or changed.
+
+The fresh publication changed all 29 rendered PNG/GIF files through sampling;
+mean absolute RGB differences for PNGs range from 0.227891 to 0.492595 on a
+0–255 scale. Fresh previews passed the shared render checks. Retaining the
+previous preview bytes and their receipts keeps the committed result diff
+limited to provenance. This follows the core v0.9.5 CHANGELOG's render treatment;
+no upstream geometry or planning behaviour changed.
+
+### Deviations for v0.1.4
+
+- Requested axis and datacentre public tags could not be confirmed anonymously
+  on 2026-09-12. The exact requested tags remain pinned; public access to those
+  releases and complete online recursive resolution need review before a claim
+  that an outsider can build the flake.
+- The single `nix flake check --offline --no-write-lock-file` attempt used local
+  overrides for the four direct inputs, two nested datacentre inputs and exact
+  archives of toolchain's core v0.9.2 fixture and aeco-toolchain v0.4.0. The build
+  remained incomplete after 180 seconds and was cancelled; no retry or lockfile.
+- Fresh raster outputs were validated, then the 30 committed images were kept
+  to avoid sampling-only changes. Geometry, editable layers and Gantt output
+  remain exactly the fresh publication's bytes.
+- Historical v0.4.2 programme-fixture provenance, earlier release evidence and
+  `benchmark.json` remain unchanged. They are committed data/history, not fetched
+  flake inputs; changing their recorded origins would misstate the evidence.
+
 ## v0.1.3 public names
 
 Target: usdAecoPlan v0.1.3 against core v0.9.2, axis v0.1.2,

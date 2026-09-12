@@ -120,8 +120,9 @@ spaces and dates, not a geometric access-route calculation.
 
 ## 6 The example on the demo data centre
 
-Inputs are generated from the pinned v0.4.2 `pod` schedule generator in an
-isolated copy, then committed here. The example composes
+The committed programme inputs retain their historical v0.4.2 `pod` generator
+provenance in `dependencies.json.fixtures`; no historical release is fetched.
+The current building pin is v0.4.8. The example composes
 `AECO_DATACENTRE_ROOT/dist/pod/dc.usda`. Its census is compared to the adjacent
 `dc.manifest.json`: 2,977 elements, 35 spaces, two levels, 3,012 meshes and
 6,238 ports. No base-facility count is assumed by the runner.
@@ -193,7 +194,7 @@ builds are not claimed as tested.
 
 ## 9 Status
 
-Version 0.1.3. See [acceptance evidence and deviations](acceptance.md) for measured
+Version 0.1.4. See [acceptance evidence and deviations](acceptance.md) for measured
 checks, tests, render inventory and remaining work. Generated schemas, normalized
 imports, driver/derived separation and the committed example are reproducible
 against the exact pins in dependencies.json.

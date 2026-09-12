@@ -63,7 +63,7 @@ Set `PYTHON` to that interpreter, then, for sibling checkouts:
 export PYTHON=python3
 export TOOLCHAIN_DIR=../usdaeco-toolchain
 export CORE_DIR=../usdaeco-core
-export CORE_PLUGIN_DIR="$CORE_DIR/out/plugins/usdAeco/resources"
+export CORE_PLUGIN_DIR="$CORE_DIR/usdAeco"
 export AECO_DATACENTRE_ROOT=../usdaeco-datacentre
 export PXR_PLUGINPATH_NAME="$CORE_PLUGIN_DIR:$PWD/usdAecoPlan:$PWD/usdAecoPlanValidators"
 env -u PYTHONPATH bash build.sh
@@ -71,7 +71,9 @@ env -u PYTHONPATH PYTHONPATH="$CORE_DIR:$PWD" "$PYTHON" check.py
 env -u PYTHONPATH "$PYTHON" -m pytest -q
 ```
 
-Use checkouts at the exact tags in `dependencies.json`. To measure the example
+Use checkouts at the exact tags in `dependencies.json`. The codeless core source
+plugin carries the tagged metadata, independently of any older build output.
+To measure the example
 from empty output roots with those same dependencies:
 
 ```sh
@@ -107,8 +109,8 @@ Private registry files and lockfiles stay outside this repository.
 
 ## Family
 
-Requires core `>=0.9.2,<1.0`. Checks pin core v0.9.2, axis v0.1.2,
-toolchain v0.3.8 and datacentre v0.4.5 (`pod`). Axis is an integration pin;
+Requires core `>=0.9.2,<1.0`. Checks pin core v0.9.5, axis v0.1.5,
+toolchain v0.3.10 and datacentre v0.4.8 (`pod`). Axis is an integration pin;
 the plan schema itself depends only on core. The published data-centre manifest
 retains its own earlier converter/core provenance; no source rebuild is implied.
 See the [family board](https://github.com/criad-com/usdaeco-board) and
@@ -124,7 +126,7 @@ lookahead and SVG drawing. `testenv/`, `conformance/profiles/`, `docs/` and
 
 ## Status
 
-Version 0.1.3: **51 checks, 0 failed, 2 not run; structure 29/0; 24 tests passed**.
+Version 0.1.4: **51 checks, 0 failed, 2 not run; structure 29/0; 24 tests passed**.
 The acceptance evidence and measured limitations are in
 [docs/acceptance.md](docs/acceptance.md). Private real-project XER validation is
 NOT RUN: the file is private client data and is never read by this library's

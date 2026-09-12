@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.4
+
+- public re-pin: usdaeco-toolchain v0.3.10, usdaeco-core v0.9.5,
+  usdaeco-axis v0.1.5, usdaeco-datacentre v0.4.8. Record all four checked
+  revisions beside release tags; retain supported requirement ranges.
+- Republish the planning example with the pinned toolchain and source release.
+  The crate, 13 layers and both Gantt files remain byte-identical. Retain the
+  30 committed images after fresh render checks; sampling changes image bytes.
+- Record incomplete Nix build verification and unsuccessful anonymous public
+  access to the requested axis and datacentre tags in the acceptance evidence.
+
 ## 0.1.3
 
 - public names → github.com/criad-com: update flake inputs and documentation links.
