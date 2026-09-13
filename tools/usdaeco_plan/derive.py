@@ -3,14 +3,7 @@ from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
 from pxr import Sdf, Usd, UsdGeom
-from .validation import activities, programmes, scope, value, window
-
-
-def _programme(stage, path=None):
-    choices = [p for p in programmes(stage) if path is None or str(p.GetPath()) == path]
-    if len(choices) != 1:
-        raise ValueError("select exactly one programme")
-    return choices[0]
+from .validation import activities, programmes, scope, select_programme, value, window
 
 
 def predecessors(stage, output):
@@ -36,7 +29,7 @@ def predecessors(stage, output):
 
 
 def derive(stage, output, *, programme_path=None):
-    programme = _programme(stage, programme_path)
+    programme = select_programme(stage, programme_path)
     epoch = date.fromisoformat(value(programme, "aeco:plan:epoch", ""))
     rate = float(value(programme, "aeco:plan:timeCodesPerDay", 1))
     from math import isfinite
@@ -95,7 +88,7 @@ def derive(stage, output, *, programme_path=None):
 def lookahead(stage, weeks, *, start=None, programme_path=None):
     if weeks <= 0:
         raise ValueError("weeks must be positive")
-    programme = _programme(stage, programme_path)
+    programme = select_programme(stage, programme_path)
     first = date.fromisoformat(start or value(programme, "aeco:plan:dataDate") or value(programme, "aeco:plan:epoch"))
     last = first + timedelta(weeks=weeks)
     result = []

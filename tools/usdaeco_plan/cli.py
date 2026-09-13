@@ -24,6 +24,7 @@ def import_main(format_name, argv=None):
     parser.add_argument("--stage", type=Path)
     parser.add_argument("--scope", type=Path)
     parser.add_argument("--workspace", type=Path)
+    parser.add_argument("--study-root", help="author below this prim path (default: AECO_STUDY_ROOT or /)")
     parser.add_argument("--normalize", action="store_true")
     args = parser.parse_args(argv)
     register()
@@ -34,7 +35,7 @@ def import_main(format_name, argv=None):
     programme = (xer2usdaeco if format_name == "xer" else mspdi2usdaeco).parse(args.input, **options)
     bind(programme, args.scope, args.workspace)
     stage = Usd.Stage.Open(str(args.stage)) if args.stage else None
-    write_programme(programme, args.out, stage=stage, normalized=args.normalize)
+    write_programme(programme, args.out, stage=stage, normalized=args.normalize, study_root=args.study_root)
     print(json.dumps({"activities": len(programme.activities), "links": sum(len(a.links) for a in programme.activities)}))
     return 0
 

@@ -36,6 +36,15 @@
         "examples/datacentre/inputs/B.xml"
       ],
       "reason": "Historical programme inputs retained unchanged; the composed building uses the direct datacentre pin."
+    },
+    "study-tidiness": {
+      "repo": "usdaeco-datacentre",
+      "ref": "v0.5.2",
+      "revision": "16b80298097bc0d5ab7ee567f49e50566e3f6597",
+      "paths": [
+        "dist/full/dc.usda"
+      ],
+      "reason": "Full project-catalog integration probe; the published pod example retains its direct data-centre pin."
     }
   }
 }

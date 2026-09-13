@@ -100,6 +100,23 @@ normalizes a driver layer. Installed entry points are `aeco-plan`, `xer2usdaeco`
 and `mspdi2usdaeco`. Imports create a programme overlay: compose it over the
 source stage before deriving visibility or validating its scope.
 
+Set `AECO_STUDY_ROOT=/Studies/plan` to author the programme at
+`/Studies/plan/Programme`. Import commands also accept `--study-root`; the Python
+writer accepts `study_root=`, both overriding the environment. Ancestors are
+plain `Scope` prims and each driver layer sets `defaultPrim` to its top-level
+prim (`Studies` here). The default `/` preserves the committed example bytes.
+Readers discover programmes from the composed data, so normalization, validation,
+lookahead, predecessors and 4D playback work without retaining the setting.
+The hook discovers cameras beneath `/Renders`, including suite cameras at
+`/Renders/plan/A` and `/Renders/plan/B`.
+
+The additional v0.5.2 full-stage integration fixture is recorded in
+`dependencies.json`. Tests use the sibling `usdaeco-datacentre-0.5.2` checkout;
+set `AECO_PLAN_TEST_STAGE` to its `dist/full/dc.usda` in another layout. The hook
+uses the manifest next to `AECO_DATACENTRE_STAGE` when testing a stage override.
+These tests exercise nested roots, project-catalog preservation and relocated
+stock-USD playback. They report a skip if the integration fixture is unavailable.
+
 `nix flake check` exposes library and structure checks. Public input URLs match
 [dependencies.json](dependencies.json). For local inputs use an external registry
 or `--override-input core path:../usdaeco-core` and equivalent toolchain, axis and
@@ -126,7 +143,7 @@ lookahead and SVG drawing. `testenv/`, `conformance/profiles/`, `docs/` and
 
 ## Status
 
-Version 0.1.4: **51 checks, 0 failed, 2 not run; structure 29/0; 24 tests passed**.
+Version 0.1.5: **51 checks, 0 failed, 2 not run; structure 29/0; 36 tests passed**.
 The acceptance evidence and measured limitations are in
 [docs/acceptance.md](docs/acceptance.md). Private real-project XER validation is
 NOT RUN: the file is private client data and is never read by this library's

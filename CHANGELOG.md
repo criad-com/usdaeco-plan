@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.5
+
+- Add `AECO_STUDY_ROOT` (default `/`), the import CLI's `--study-root` option
+  and the writer's `study_root` argument. Programme layers author plain Scope
+  ancestors and set their default prim to the namespace's top-level prim.
+- Discover programmes from data for presentation, Gantt output and stock-USD
+  playback, matching the existing validator and 4D traversal. Resolve derived
+  predecessors and unresolved import aliases within the selected study.
+- Discover programme cameras beneath `/Renders`, including suite namespaces;
+  use the selected data-centre stage's manifest for source-census checks.
+- Test `/Studies/plan` and a deeper custom root on the v0.5.2 full delivery,
+  both importers and CLIs, workspace findings, the retained project catalog,
+  and 552 relocated plugin-free visibility checks. Preserve the committed
+  default example, renders and direct dependency pins.
+
 ## 0.1.4
 
 - public re-pin: usdaeco-toolchain v0.3.10, usdaeco-core v0.9.5,

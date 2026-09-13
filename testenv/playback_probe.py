@@ -13,8 +13,7 @@ def probe(root, inputs):
         stage = Usd.Stage.Open(str(entry))
         assert stage and not stage.GetCompositionErrors()
         assert stage.GetStartTimeCode() == 0 and stage.GetEndTimeCode() == 77
-        programme = stage.GetPrimAtPath('/Programme')
-        assert programme.GetTypeName() == 'AecoProgramme'
+        programme, = [p for p in stage.Traverse() if p.GetTypeName() == 'AecoProgramme']
         assert programme.IsA(UsdGeom.Scope)
         epoch = date.fromisoformat(programme.GetAttribute('aeco:plan:epoch').Get())
         rows, fields, table = [], None, None

@@ -1,5 +1,43 @@
 # Acceptance evidence
 
+## v0.1.5 configurable study root
+
+The default example keeps its v0.4.8 pod source and existing direct dependency
+pins. Additional integration tests use the v0.5.2 full delivery at the fixture
+revision recorded in `dependencies.json`.
+
+| Acceptance | Status | Evidence |
+|---|---|---|
+| Repository gate | PASS | 51 checks, 0 failed, 2 not run; all 8 core and 8 planning validators load |
+| Structure | PASS | S01–S29, including generated-schema validation, manifest consistency and sanitized contents |
+| Python tests | PASS | 36 passed, no skips, including 12 study-root cases |
+| Configurable authoring | PASS | Environment and explicit writer/CLI roots; `/`, `/Studies/plan` and `/Studies/review/phase`; invalid roots rejected |
+| Programme layers | PASS | XER and MSPDI agree after normalization; plain Scope ancestors; `defaultPrim` is `Studies` for nested roots and `Programme` for `/` |
+| Readers and relationships | PASS | Validation, lookahead, predecessor targets, 4D and normalization follow authored data even with a different environment setting |
+| Full-stage hook | PASS | A retains its 3 named findings and B is clean; source census matches the full-stage manifest; Gantt SVGs retain the committed bytes |
+| Root tidiness | PASS | Only project, Studies and Renders roots; project catalog retained with no root catalog; suite cameras remain beneath `/Renders/plan` |
+| Relocated stock playback | PASS | 552 visibility assertions over both programmes in a copied result with no family plugins or study-root setting |
+| Version and schema | PASS | Library, package, runtime and resource metadata equal 0.1.5; build and generated-schema validation pass |
+| Artifact preservation | PASS | All 48 committed result, render, manifest and documentation-image files byte-identical to v0.1.4 |
+| Fresh default example | PASS | 100.532 s / 480 s; editable layers and normalized crate match committed results; 28 fresh render records and an independent vanilla render |
+| Nix | NOT RUN | One offline attempt with four local direct-input overrides failed resolving a temporary-directory symlink before evaluation/build; no retry |
+
+The integration tests use `AECO_PLAN_TEST_STAGE` when supplied; otherwise they
+look for the sibling v0.5.2 checkout. Missing integration data is reported as
+skipped, never passed. All integration cases ran for this acceptance.
+
+### Deviations for v0.1.5
+
+- The v0.5.2 full delivery is an additional recorded test fixture. The direct
+  v0.4.8 pod pin and committed example manifest stay unchanged to preserve the
+  default example's bytes.
+- Nix evaluation and build are unverified because the single local attempt
+  failed during input-path resolution. No lockfile is committed.
+- No `STEERING.md` was present in this checkout or its ancestor directories
+  when checked before committing.
+- GUI interaction was not tested. The relocated stock-USD probe supplies the
+  playback evidence, alongside the gate's fresh example renders.
+
 ## v0.1.4 public re-pin
 
 Target: usdAecoPlan v0.1.4 against core v0.9.5, axis v0.1.5,

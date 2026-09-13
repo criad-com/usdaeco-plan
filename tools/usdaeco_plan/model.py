@@ -4,6 +4,7 @@ from datetime import date
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import uuid
 
@@ -130,19 +131,33 @@ def id_index(stage):
     return result
 
 
-def write_programme(programme, output=None, *, stage=None, normalized=False):
+def study_root_path(root=None):
+    """Resolve the authoring namespace; the legacy example uses the stage root."""
+    value = str(root) if root is not None else os.environ.get("AECO_STUDY_ROOT", "/")
+    if not Sdf.Path.IsValidPathString(value):
+        raise ValueError("study root must be / or an absolute prim path")
+    path = Sdf.Path(value)
+    if not path.IsAbsolutePath() or not path.IsAbsoluteRootOrPrimPath() or path.ContainsPrimVariantSelection():
+        raise ValueError("study root must be / or an absolute prim path")
+    return path
+
+
+def write_programme(programme, output=None, *, stage=None, normalized=False, study_root=None):
     """Author drivers only. Normalization removes format provenance and title.
 
     Dates, WBS, scope, identity, progress and every ordered link instance remain.
     A caller supplies the same programme key for matching exports.
     """
     programme.validate()
+    study = study_root_path(study_root)
     result = Usd.Stage.CreateInMemory()
     result.SetMetadata("fallbackPrimTypes", FALLBACKS)
     UsdGeom.SetStageMetersPerUnit(result, 1)
     UsdGeom.SetStageUpAxis(result, UsdGeom.Tokens.z)
-    root = result.DefinePrim("/Programme", "AecoProgramme")
-    result.SetDefaultPrim(root)
+    for path in study.GetPrefixes():
+        UsdGeom.Scope.Define(result, path)
+    root = result.DefinePrim(study.AppendChild("Programme"), "AecoProgramme")
+    result.SetDefaultPrim(result.GetPrimAtPath(root.GetPath().GetPrefixes()[0]))
     root.SetDisplayName(programme.key if normalized else programme.name)
     attr(root, "aeco:id", identity(programme.key, "programme"))
     values = {"epoch": programme.epoch, "timeCodesPerDay": programme.time_codes_per_day,
@@ -160,7 +175,7 @@ def write_programme(programme, output=None, *, stage=None, normalized=False):
         if key.startswith("/") and Sdf.Path.IsValidPathString(key):
             return Sdf.Path(key)
         # Keep missing references visible to DanglingScope; never drop them.
-        return Sdf.Path("/Unresolved/" + identifier(key))
+        return study.AppendChild("Unresolved").AppendChild(identifier(key))
 
     all_scope = []
     for activity in sorted(programme.activities, key=lambda a: (a.wbs, a.key)):

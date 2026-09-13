@@ -5,7 +5,7 @@ from pathlib import Path
 from pxr import Gf, Sdf, Usd, UsdGeom
 from . import xer2usdaeco, mspdi2usdaeco
 from .model import bind, write_programme, normalize_layer, id_index, FALLBACKS
-from .validation import activities, findings, scope, value
+from .validation import activities, findings, scope, select_programme, value
 from .derive import derive, predecessors
 from .gantt import draw
 
@@ -29,10 +29,15 @@ def presentation(base, programme_stage, workspace, output, label):
     """Derived colours and placement; never edit or reparent source referents."""
     layer = Sdf.Layer.CreateAnonymous("presentation.usda")
     stage = Usd.Stage.Open(layer)
-    stage.OverridePrim('/Renders/B').SetActive(label == 'B')
+    cameras = [p for p in base.Traverse() if p.IsA(UsdGeom.Camera)
+               and p.GetPath().HasPrefix('/Renders') and p.GetName() == 'B']
+    if len(cameras) > 1:
+        raise ValueError('select exactly one programme B camera under Renders')
+    camera_path = cameras[0].GetPath() if cameras else Sdf.Path('/Renders/B')
+    stage.OverridePrim(camera_path).SetActive(label == 'B')
     if label == 'A':
-        camera = UsdGeom.Camera.Define(stage, '/Renders/A')
-        original = UsdGeom.Camera(base.GetPrimAtPath('/Renders/B'))
+        camera = UsdGeom.Camera.Define(stage, camera_path.GetParentPath().AppendChild('A'))
+        original = UsdGeom.Camera(base.GetPrimAtPath(camera_path))
         camera.SetFromCamera(original.GetCamera())
     index = id_index(base)
     placements = json.loads(Path(workspace).read_text()).get('placements', {})
@@ -50,7 +55,7 @@ def presentation(base, programme_stage, workspace, output, label):
         op.SetMetadata('aecoDerived', True)
         override.CreateAttribute('xformOpOrder', Sdf.ValueTypeNames.TokenArray, custom=False).Set(['xformOp:transform'])
     colours = {}
-    for activity in activities(programme_stage.GetPrimAtPath('/Programme')):
+    for activity in activities(select_programme(programme_stage)):
         kind = value(activity, 'aeco:plan:taskType')
         if kind in {'attendance', 'removal', 'logistic'}:
             continue
@@ -83,7 +88,8 @@ def hook(stage, out, *, render_a=True, render_records=None):
     from usdaeco_check.validation import run
     from usdaeco_render import render
     inputs = out.parent / 'inputs'
-    source = Path(os.environ['AECO_DATACENTRE_ROOT']) / 'dist/pod'
+    source = (Path(os.environ['AECO_DATACENTRE_STAGE']).parent if os.environ.get('AECO_DATACENTRE_STAGE')
+              else Path(os.environ['AECO_DATACENTRE_ROOT']) / 'dist/pod')
     counts = source_counts(stage)
     manifest_counts = json.loads((source / 'dc.manifest.json').read_text())['counts']
     if counts != {key: manifest_counts[key] for key in counts}:
@@ -123,7 +129,7 @@ def hook(stage, out, *, render_a=True, render_records=None):
         result.append({'name': 'ProgrammeEvidence', 'programme': key, 'activities': len(programme.activities),
                        **graph, 'normalizedEqual': True, 'visibilityTargets': fourd['targets']})
         (folder / 'visibility.json').write_text(json.dumps(fourd, indent=2, sort_keys=True) + '\n')
-        draw(stage.GetPrimAtPath('/Programme'), out / (key + '.gantt.svg'), key)
+        draw(select_programme(stage), out / (key + '.gantt.svg'), key)
         if key == 'A' and render_a:
             print('== stage: render programme A, 12 weeks', flush=True)
             # The renderer derives the sheet/GIF from these saved frames.

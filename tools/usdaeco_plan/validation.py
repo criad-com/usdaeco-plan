@@ -19,6 +19,14 @@ def programmes(stage):
     return [p for p in stage.Traverse() if p.GetTypeName() == "AecoProgramme"]
 
 
+def select_programme(stage, path=None):
+    """Find a programme in the composed data, independent of authoring settings."""
+    choices = [p for p in programmes(stage) if path is None or p.GetPath() == Sdf.Path(path)]
+    if len(choices) != 1:
+        raise ValueError("select exactly one programme")
+    return choices[0]
+
+
 def activities(programme):
     return [p for p in Usd.PrimRange(programme)
             if p.GetTypeName() in {"AecoActivity", "AecoMilestone"} and p.HasAPI("AecoScheduleAPI")]
